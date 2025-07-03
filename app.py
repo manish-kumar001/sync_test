@@ -4,7 +4,7 @@ import time
 # Dummy user database
 USER_DB = {
     "admin": "password123",
-    "user1": "passw0rd"
+    "user1": "passw0rdgghgh"
 }
 
 # Shared resource
