@@ -1,11 +1,17 @@
-name: Example workflow for Python using Snyk
-on: push
+name: Static Code Analysis with Snyk
+
+on:
+  push:
+  pull_request:
+
 jobs:
-  security:
+  snyk-code-analysis:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-      - name: Snyk code analysis
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Run Snyk Code to check for vulnerabilities
         uses: snyk/actions/python@master
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
